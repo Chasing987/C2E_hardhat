@@ -29,7 +29,7 @@
     ![create apikey](./screenshot/2.png)
 
     保存你的JWT（项目用）、apikey、api_secret
-    ![jwt](./screenshot/2.png)
+    ![jwt](./screenshot/3.png)
 4. 配置JWT
     把JWT写到./context/JWT.js中
 
