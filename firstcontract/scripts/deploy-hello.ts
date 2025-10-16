@@ -1,12 +1,17 @@
 import "@nomicfoundation/hardhat-ethers";
 import { ethers } from "hardhat";
 
-async function deploy() {
-    const HelloWorld = await ethers.getContractFactory("HelloWorld");
+async function foo() {
+    const HW = await ethers.getContractFactory("HelloWorld");
+    const hw = await HW.deploy();
+    await hw.waitForDeployment();
 
-    const hello = await HelloWorld.deploy();
-    await hello.waitForDeployment();
-    return hello;
+    return hw;
+}
+
+async function deploy() {
+    const hw = await foo();
+    return hw;
 }
 
 async function sayHello(hello:any) {
