@@ -27,6 +27,7 @@ async function getContract() {
     // 1. 地址
     // 2. 方法名
     // 3. provider
+    // 4. signer
 
     if(!await hasSigners() && !await requestAccess()){
         throw new Error("No ethereum provider found");
@@ -37,12 +38,39 @@ async function getContract() {
     const contract = new ethers.Contract(
         address,
         [
-            "function hello() public pure returns (string memory)"
+            "function count() public",
+            "function getCount() public view returns (uint256)"
         ],
-        provider
+        await provider.getSigner(),
     );
 
-    document.body.innerHTML = await contract.hello();
+    const counter = document.createElement("div");
+    async function getCount() {
+        counter.innerHTML = await contract.getCount();
+    }
+    getCount();
+
+    async function setCount() {
+        await contract.count();
+    }
+
+    const btn = document.createElement("button");
+    btn.innerHTML = "increment";
+    btn.onclick = async function() {
+        const tx = await contract.count(); // transaction提交，不是等待transaction完成
+        await tx.wait(); // 等待transaction完成
+        // getCount();
+        // await contract.count();
+        // await setCount();
+        getCount();
+    }
+
+    // contract.on(contract.filters.CounterInc(), async function ({ args }) {
+    //     counter.innerHTML = args[0].toString() || await contract.getCount();
+    // })
+
+    document.body.appendChild(counter);
+    document.body.appendChild(btn);
 }
 
 async function main() {
