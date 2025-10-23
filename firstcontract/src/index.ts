@@ -1,4 +1,5 @@
 import { ethers } from "ethers";
+import { abi } from '../artifacts/contracts/Counter.sol/Counter.json';
 
 function getEth(){
     // @ts-ignore
@@ -35,12 +36,14 @@ async function getContract() {
 
     const provider = new ethers.BrowserProvider(getEth())
     const address = process.env.CONTRACT_ADDRESS;
+    // const address = "0x51a10886a854D273Ec169Af02CB9862Cb17bF4c1";
     const contract = new ethers.Contract(
         address,
-        [
-            "function count() public",
-            "function getCount() public view returns (uint256)"
-        ],
+        // [
+        //     "function count() public",
+        //     "function getCount() public view returns (uint256)"
+        // ],
+        abi,
         await provider.getSigner(),
     );
 
@@ -57,17 +60,16 @@ async function getContract() {
     const btn = document.createElement("button");
     btn.innerHTML = "increment";
     btn.onclick = async function() {
-        const tx = await contract.count(); // transaction提交，不是等待transaction完成
-        await tx.wait(); // 等待transaction完成
+        // const tx = await contract.count(); // transaction提交，不是等待transaction完成
+        // await tx.wait(); // 等待transaction完成
         // getCount();
-        // await contract.count();
-        // await setCount();
-        getCount();
+
+        await contract.count();
     }
 
-    // contract.on(contract.filters.CounterInc(), async function ({ args }) {
-    //     counter.innerHTML = args[0].toString() || await contract.getCount();
-    // })
+    contract.on(contract.filters.CounterInc(), async function ({ args }) {
+        counter.innerHTML = args[0].toString() || await contract.getCount();
+    })
 
     document.body.appendChild(counter);
     document.body.appendChild(btn);

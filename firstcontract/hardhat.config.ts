@@ -14,10 +14,10 @@ const config:Config = {
       chainId: 31337
     },
 
-    // sepolia_eth: {
-    //   url: `xxx`,
-    //   accounts: [process.env.PRIVATE_KEY]
-    // }
+    sepolia_eth: {
+      url: `https://eth-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
+      accounts: [process.env.PRIVATE_KEY]
+    }
   }
 };
 
