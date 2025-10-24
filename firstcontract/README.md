@@ -44,12 +44,15 @@ yarn add -D @types/mocha
 npx hardhat test 
 
 // 部署
-npx hardhat run scripts/deploy-hello .ts --network localhost
+npx hardhat run scripts/deploy-hello.ts --network localhost
 
 // localhost地址, 即本地上起了一个区块链网络
 npx hardhat node
 
 // webpack 打包工具
+pnpm dev
 
-
+// 验证合约 
+// 0x6Ea3004bD10c56318f3f4D521990faE50ab72A27为部署合约的地址
+npx hardhat verify --network sepolia_eth 0x6Ea3004bD10c56318f3f4D521990faE50ab72A27
 ```

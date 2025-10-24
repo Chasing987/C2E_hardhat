@@ -8,7 +8,7 @@ dotenv.config();
 type Config = import('hardhat/config').HardhatUserConfig;
 
 const config:Config = {
-  solidity: "0.8.27",
+  solidity: "0.8.24",
   networks: {
     hardhat: {
       chainId: 31337
@@ -22,7 +22,10 @@ const config:Config = {
 
   gasReporter: {
     enabled: true
-  } 
+  },
+  etherscan: {
+    apiKey: 'K4FBJM98QYZJTPGGDEWQT3U1BJPTHW1X36'
+  }
 };
 
 export default config;
