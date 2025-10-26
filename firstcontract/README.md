@@ -28,6 +28,9 @@ yarn init -y
 // 安装hardhat框架
 yarn add -D hardhat
 
+// 安装hardhat版本
+npm install --save-dev hardhat@^2.26.0
+
 // 初始化合约项目
 npx hardhat init
 
@@ -48,6 +51,9 @@ npx hardhat run scripts/deploy-hello.ts --network localhost
 
 // localhost地址, 即本地上起了一个区块链网络
 npx hardhat node
+
+// 添加一些webpack依赖
+yarn add -D webpack webpack-cli ts-loader html-webpack-plugin dotenv webpack-dev-server
 
 // webpack 打包工具
 pnpm dev
