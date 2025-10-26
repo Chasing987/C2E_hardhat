@@ -34,6 +34,9 @@ npm install --save-dev hardhat@^2.26.0
 // 初始化合约项目
 npx hardhat init
 
+// 安装dotenv
+npm install --save-dev dotenv
+
 // 合约编译
 npx hardhat complie
 
