@@ -1,6 +1,7 @@
 import "hardhat-gas-reporter";
 import "@nomicfoundation/hardhat-toolbox";
 import "@nomicfoundation/hardhat-ethers";
+import "@openzeppelin/hardhat-upgrades";
 
 const dotenv = require('dotenv');
 dotenv.config();
