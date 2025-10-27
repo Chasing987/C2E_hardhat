@@ -6,12 +6,6 @@ import "@openzeppelin/hardhat-upgrades";
 const dotenv = require('dotenv');
 dotenv.config();
 
-/** @type import('hardhat/config').HardhatUserConfig */
-module.exports = {
-  solidity: "0.8.20",
-};
-
-
 type Config = import('hardhat/config').HardhatUserConfig;
 
 const config:Config = {
