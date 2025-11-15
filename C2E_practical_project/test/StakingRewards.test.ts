@@ -1,7 +1,7 @@
 import "@nomicfoundation/hardhat-ethers";
 import { ethers } from "hardhat";
 import { formatEther, parseEther } from "ethers";
-import type { StakingRewards } from "../typechain-types/contracts/07_StakingRewards/StakingRewards.sol/StakingRewards";
+import type { StakingRewards } from "../typechain-types/contracts/07_StakingRewards";
 import { ERC20Mock } from "../typechain-types/contracts/mocks";
 import { expect } from "chai";
 
