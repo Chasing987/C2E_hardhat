@@ -33,6 +33,13 @@
 4. 配置JWT
     把JWT写到./context/JWT.js中
 
+#### Pinata V3 apikeys入口创建变更说明
+
+pinata_v3创建jwt方式如下
+![apikey](./screenshot/1_v3.png)
+![create apikey](./screenshot/2_v3.png)
+![jwt](./screenshot/3_v3.png)
+
 #### 项目配置
 1. 依赖安装 `yarn`
 2. 启动本地链 `npx hardhat node`
@@ -53,7 +60,7 @@
 
 ### 流程
 1. 管理员创建合约（上一步部署合约已经执行）
-2. [管理员账号]创建canditate【allow-candidate页面】,上传图片，填写[候选人]信息（地址可以使用hardhat node初始提供的地址）默认创建合约的地址为
+2. [管理员账号]创建candidate【allow-candidate页面】,上传图片，填写[候选人]信息（地址可以使用hardhat node初始提供的地址）默认创建合约的地址为
 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
 
 http://localhost:3000/candidate-regisration
