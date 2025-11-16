@@ -85,3 +85,35 @@ http://localhost:3000/allowed-voters
 ![home](./screenshot/home.png)
 完成投票
 ![voted](./screenshot/voted.png)
+
+## 文件结构
+
+### 合约
++ contracts【合约代码】
++ scripts【部署合约脚本】
++ test 【合约测试】
++ hardhat.config.js【配置文件】
+
+## 前端
++ pages
+    + index.js（首页）
+    + voterList.js
+    + allow-voters.js【注册新的voter】
+    + candidate-registration.js【注册新的candidate】
++ styles【全局的样式文件】
++ public【静态资源文件】
++ components【放一些可以复用的组件】
+    + NavBar
+        + NavBar.jsx
+        + NavBar.module.css【模块化css】
+    + ......
++ context【管理应用的状态和一些状态变量】
+    + constants.js【abi】
+    + Voter.js【和合约交互】
+
+monorepo
++ packages
++ contracts
++ next-fornt
+【wagmi/web3react】
+

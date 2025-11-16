@@ -37,6 +37,10 @@
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^1.0.1",
-    "hardhat": "^2.10.0"
-  }
+    "hardhat": "^2.27.0"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Chasing987/C2E_hardhat.git",
+  "author": "liuyongfeng <1660347408@qq.com>",
+  "license": "MIT"
 }
